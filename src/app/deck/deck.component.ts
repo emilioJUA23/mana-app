@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Deck } from '../deck';
-import {DECKS} from '../mock-decks';
 import { DeckService } from '../deck.service';
 
 
@@ -11,11 +10,6 @@ import { DeckService } from '../deck.service';
 })
 export class DeckComponent implements OnInit {
   decks:Deck[] ;
-  selectedDeck: Deck;
-
-  onSelect(deck: Deck): void {
-    this.selectedDeck = deck;
-  }
 
   getDecks(): void
   {

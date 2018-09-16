@@ -1,8 +1,4 @@
-/* decksComponent's private CSS styles */
-.selected {
-  background-color: #CFD8DC !important;
-  color: white;
-}
+/* DecksComponent's private CSS styles */
 .decks {
   margin: 0 0 2em 0;
   list-style-type: none;
@@ -10,28 +6,39 @@
   width: 15em;
 }
 .decks li {
-  cursor: pointer;
   position: relative;
-  left: 0;
+  cursor: pointer;
   background-color: #EEE;
   margin: .5em;
   padding: .3em 0;
   height: 1.6em;
   border-radius: 4px;
 }
-.decks li.selected:hover {
-  background-color: #BBD8DC !important;
-  color: white;
-}
+
 .decks li:hover {
   color: #607D8B;
   background-color: #DDD;
   left: .1em;
 }
-.decks .text {
+
+.decks a {
+  cursor: pointer;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+  color: #888;
+  background-color: #EEE;
+  text-decoration: none;
   position: relative;
-  top: -3px;
+  display: block;
+  /* width: 250px; */
 }
+
+.decks a:hover {
+  color:#607D8B;
+}
+
 .decks .badge {
   display: inline-block;
   font-size: small;
@@ -43,6 +50,8 @@
   left: -1px;
   top: -4px;
   height: 1.8em;
+  min-width: 16px;
+  text-align: right;
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
 }

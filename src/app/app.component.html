@@ -2,7 +2,12 @@
 <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
-    <app-deck></app-deck>
-    <app-messages></app-messages>
+    <!-- <app-deck></app-deck> -->
+    <!-- <app-messages></app-messages> -->
+    <nav>
+      <a routerLink="/dashboard">Dashboard</a>
+      <a routerLink="/decks">Decks</a>
+    </nav>
+    <router-outlet></router-outlet>
   </h1>
 </div>
