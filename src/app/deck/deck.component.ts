@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Deck } from '../deck';
 import {DECKS} from '../mock-decks';
+import { DeckService } from '../deck.service';
 
 
 @Component({
@@ -9,16 +10,22 @@ import {DECKS} from '../mock-decks';
   styleUrls: ['./deck.component.css']
 })
 export class DeckComponent implements OnInit {
-  decks=DECKS;
+  decks:Deck[] ;
   selectedDeck: Deck;
-  
+
   onSelect(deck: Deck): void {
     this.selectedDeck = deck;
   }
 
-  constructor() { }
+  getDecks(): void
+  {
+      this.deckService.getDecks().subscribe(decks => this.decks = decks);
+  }
+
+  constructor(private deckService: DeckService) { }
 
   ngOnInit() {
+    this.getDecks();
   }
 
 }
