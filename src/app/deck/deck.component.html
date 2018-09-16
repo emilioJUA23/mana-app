@@ -1,7 +1,17 @@
-<h2>{{deck.name | uppercase}} Details</h2>
-<div><span>id: </span>{{deck.id}}</div>
-<div>
-  <label>name:
-    <input [(ngModel)]="deck.name" placeholder="name">
-  </label>
+<h2>My Decks</h2>
+<div *ngIf="selectedDeck">
+
+  <h2>{{selectedDeck.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedDeck.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedDeck.name" placeholder="name">
+    </label>
+  </div>
+
 </div>
+<ul class="decks">
+  <li *ngFor="let deck of decks" (click)="onSelect(deck)" [class.selected]="deck === selectedDeck">
+    <span class="badge">{{deck.id}}</span> {{deck.name}}
+  </li>
+</ul>

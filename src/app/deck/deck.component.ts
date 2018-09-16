@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Deck } from '../deck';
+import {DECKS} from '../mock-decks';
 
 
 @Component({
@@ -8,10 +9,12 @@ import { Deck } from '../deck';
   styleUrls: ['./deck.component.css']
 })
 export class DeckComponent implements OnInit {
-  deck: Deck = {
-    id: 1,
-    name: 'Aggro'
-  };
+  decks=DECKS;
+  selectedDeck: Deck;
+  
+  onSelect(deck: Deck): void {
+    this.selectedDeck = deck;
+  }
 
   constructor() { }
 
