@@ -8,6 +8,8 @@ import { DeckDetailComponent } from './deck-detail/deck-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { StorageServiceModule } from 'angular-webstorage-service';
+import { DeckCreateComponent } from './deck-create/deck-create.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     DeckComponent,
     DeckDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    DeckCreateComponent
   ],
   imports: [
   BrowserModule,
   FormsModule,
-  AppRoutingModule
+  AppRoutingModule,
+  StorageServiceModule
 ],
   providers: [],
   bootstrap: [AppComponent]
